@@ -198,6 +198,7 @@ dependencies {
     } else {
       implementation jscFlavor
     }
+//    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
 //    implementation(project(":react-native-google-signin")){
 //        exclude group: "com.google.android.gms" // very important
 //    }
