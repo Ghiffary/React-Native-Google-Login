@@ -22,4 +22,10 @@ export const firebaseConfig = {
 };
 ```
 
-### That's all you need!  
+### That's all you need!
+```
+```
+### Need Tutorial Video
+
+!!part 1 = https://www.youtube.com/watch?v=ZcaQJoXY-3Q
+!!part 2 = https://www.youtube.com/watch?v=GZKaVJEd4JU&list=PL8xRxGh9Q31vaZDJMMm0LkqLOP_gnZYry&index=2&t=65s
