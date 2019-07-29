@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button,Image } from 'react-native';
 import firebase from 'firebase';
 class LoginScreen extends Component {
   isUserEqual = (googleUser, firebaseUser) => {
@@ -97,12 +97,15 @@ class LoginScreen extends Component {
   };
   render() {
     return (
-      <View style={styles.container}>
-        <Button
-          title="Sign In With Google"
-          onPress={() => this.signInWithGoogleAsync()}
-        />
-      </View>
+      //
+          <View 
+          style={styles.container}> 
+              <Button
+                title="Sign In With Google"
+                onPress={() => this.signInWithGoogleAsync()}
+              />
+          </View>
+      
     );
   }
 }

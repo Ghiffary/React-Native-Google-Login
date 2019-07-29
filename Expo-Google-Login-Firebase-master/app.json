@@ -12,9 +12,9 @@
     "orientation": "portrait",
     "icon": "./assets/allstars.png",
     "splash": {
-      "image": "./assets/allstars.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/Onboarding1.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#FAFAFA"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

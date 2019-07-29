@@ -10,22 +10,23 @@ export default class App extends React.Component {
         <Onboarding
         onSkip={() => this.props.navigation.navigate('LoadingScreen')}
         onDone={() => this.props.navigation.navigate('LoadingScreen')}
+        bottomBarColor={'#FF004F'}
           pages={[
             {
-              backgroundColor: '#fff',
-              image: <Image source={require('../assets/circle.png')} />,
+              backgroundColor: '#FAFAFA',
+              image: <Image source={require('../assets/img_onboarding_1.png')} />,
               title: 'Onboarding',
               subtitle: 'Done with React Native Onboarding Swiper',
             },
             {
-              backgroundColor: '#fe6e58',
-              image: <Image source={require('../assets/square.png')} />,
+              backgroundColor: '#FAFAFA',
+              image: <Image source={require('../assets/img_onboarding_2.png')} />,
               title: 'The Title',
               subtitle: 'This is the subtitle that sumplements the title.',
             },
             {
-              backgroundColor: '#999',
-              image: <Image source={require('../assets/triangle.png')} />,
+              backgroundColor: '#FAFAFA',
+              image: <Image source={require('../assets/img_onboarding_3.png')} />,
               title: 'Triangle',
               subtitle: "Beautiful, isn't it?",
             },
