@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button,Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import firebase from 'firebase';
+import { Button, ThemeProvider,SocialIcon ,Image} from 'react-native-elements';
+import { Footer, Container,Header,Content} from 'native-base';
+
+
+
 class LoginScreen extends Component {
   isUserEqual = (googleUser, firebaseUser) => {
     if (firebaseUser) {
@@ -98,14 +103,52 @@ class LoginScreen extends Component {
   render() {
     return (
       //
-          <View 
-          style={styles.container}> 
-              <Button
+      <Container>
+        <Image
+            source={ require('../assets/img_login_1.png') }
+            style={{ width: '100%', height: 200 }}
+          />
+        {/* <Header /> */}
+        <Container style={styles.container}>
+        
+        <SocialIcon
+                title="Sign In With Instagram"
+                button
+                raised={false}
+                type='instagram'
+                // onPress={() => this.signInWithGoogleAsync()}
+                
+          />
+          <SocialIcon
+                title="Sign In With Facebook"
+                button
+                raised={false}
+                type='facebook'
+                // onPress={() => this.signInWithGoogleAsync()}
+                
+          />
+          <SocialIcon
+                title="Sign In With Twitter"
+                button
+                raised={false}
+                type='twitter'
+                // onPress={() => this.signInWithGoogleAsync()}
+                
+          />
+        <SocialIcon
                 title="Sign In With Google"
+                button
+                raised={false}
+                type='google-plus-official'
                 onPress={() => this.signInWithGoogleAsync()}
-              />
-          </View>
-      
+                
+          />
+        
+          
+        </Container>
+        
+          
+          </Container>
     );
   }
 }
@@ -114,7 +157,8 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    margin:10,
+    // alignItems: 'center',
     justifyContent: 'center'
   }
 });
