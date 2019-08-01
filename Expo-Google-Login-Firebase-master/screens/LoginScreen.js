@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import firebase from 'firebase';
-import { Button, ThemeProvider,SocialIcon ,Image} from 'react-native-elements';
+import { Button, ThemeProvider,SocialIcon ,Image,Text} from 'react-native-elements';
 import { Footer, Container,Header,Content} from 'native-base';
 
 
@@ -105,12 +105,28 @@ class LoginScreen extends Component {
       //
       <Container>
         <Image
-            source={ require('../assets/img_login_1.png') }
+            source={ require('../assets/topimg.png') }
             style={{ width: '100%', height: 200 }}
           />
         {/* <Header /> */}
         <Container style={styles.container}>
-        
+
+        <Text 
+            style={{
+              marginLeft:10,
+              fontSize:13,
+              fontWeight:'bold'}}>
+            Connect With Your 
+        </Text>
+        <Text 
+            style={{
+              fontSize:13,
+              fontWeight:'bold',
+              marginLeft:10,
+              marginBottom:5}}>
+            Social Media Account :
+        </Text>
+
         <SocialIcon
                 title="Sign In With Instagram"
                 button
@@ -143,6 +159,11 @@ class LoginScreen extends Component {
                 onPress={() => this.signInWithGoogleAsync()}
                 
           />
+          <Text style={{
+                  textAlign:'center',
+                  margin:10}}>
+            Read Our Term & Condition
+          </Text>
         
           
         </Container>
@@ -157,7 +178,7 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin:10,
+    margin:35,
     // alignItems: 'center',
     justifyContent: 'center'
   }

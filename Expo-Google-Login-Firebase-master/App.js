@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import LoadingScreen from './screens/LoadingScreen';
 import OnboardingScreen from './screens/OnboardingScreen'
+import RegisterPage from './screens/RegisterPage'
 
 import * as firebase from 'firebase';
 import { firebaseConfig } from './config';
@@ -21,6 +22,7 @@ const AppSwitchNavigator = createSwitchNavigator({
   OnboardingScreen: OnboardingScreen,
   LoadingScreen: LoadingScreen,
   LoginScreen: LoginScreen,
+  RegisterPage:RegisterPage,
   DashboardScreen: DashboardScreen
 });
 
