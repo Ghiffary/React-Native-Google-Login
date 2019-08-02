@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {   StyleSheet,ActivityIndicator,StatusBar } from 'react-native';
+import {   StyleSheet,ActivityIndicator,StatusBar,ScrollView } from 'react-native';
 import firebase from 'firebase';
 import { Button, ThemeProvider,SocialIcon ,Image, Header,ButtonGroup} from 'react-native-elements';
 import { Container,Icon, Text,View,Item, Input, Footer,DatePicker,Picker } from 'native-base';
@@ -52,6 +52,8 @@ class DashboardScreen extends Component {
     const buttons = ['Male', 'Female', 'Group']
     const { selectedIndex } = this.state
     return (
+      
+     
       <Container>
       <Container>
       <StatusBar barStyle = "dark-content" hidden = {false}  translucent = {true}/>
@@ -93,8 +95,13 @@ class DashboardScreen extends Component {
                       onPress={() => firebase.auth().signOut()} />
               </Container> */}
              
-          
-          <View>
+        <ScrollView 
+              behaviour = "height"
+              keyboardVerticalOffset = {64}
+              style= {{  flex: 1,}}>
+          <View
+          style={{marginBottom:'5%'}}
+          >
                  <Text 
                   style={{
                     color:'#9c9c9c',
@@ -182,7 +189,8 @@ class DashboardScreen extends Component {
                       onPress={this.updateIndex}
                       selectedIndex={selectedIndex}
                       buttons={buttons}
-                      containerStyle={{height: 40}}/>
+                      containerStyle={{borderRadius:40,height: 40}}
+                      />
                 
                 <Text style={{fontSize:13,
                               marginStart:20,
@@ -260,22 +268,30 @@ class DashboardScreen extends Component {
                       </Picker>
                   </Item>
 
+                 
+
+                  
+                  
+
 
           </View>
+          </ScrollView>
           </Container>
+          
           
       <Footer>
       <LinearGradient
+        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
         colors={['#FF786F', '#FF0B52']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}    
         style={styles.text}>
 
         <Text 
-        onPress= {() => this.props.navigation.navigate('DashboardScreen')}
+        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
         style={{color:'white', fontSize:14}}>Next</Text>
         <Icon 
-        onPress= {() => this.props.navigation.navigate('DashboardScreen')}
+        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
         style={{color:'white', marginStart: 10, fontSize:14}} name='md-arrow-round-forward'/>
       </LinearGradient>
       </Footer>
