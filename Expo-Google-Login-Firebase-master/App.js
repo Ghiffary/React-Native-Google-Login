@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Platform } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import LoginScreen from './screens/LoginScreen';
@@ -10,6 +10,11 @@ import RegisterPage from './screens/RegisterPage'
 import CheckEmailPage from './screens/CheckEmailPage'
 import SetPassword from './screens/SetPassword'
 import SetPasswordSuccess from './screens/SetPasswordSuccess'
+import MainTabNavigator from './navigation/MainTabNavigator';
+
+
+// import AppNavigator from './navigation/AppNavigator';
+
 
 import * as firebase from 'firebase';
 import { firebaseConfig } from './config';
@@ -17,7 +22,10 @@ firebase.initializeApp(firebaseConfig);
 
 export default class App extends React.Component {
   render() {
-    return <AppNavigator />;
+    return (
+        <AppNavigator />
+      
+    );
   }
 }
 
@@ -26,6 +34,7 @@ const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen: LoadingScreen,
   LoginScreen: LoginScreen,
   RegisterPage:RegisterPage,
+  Main: MainTabNavigator,
   DashboardScreen: DashboardScreen,
   CheckEmailPage : CheckEmailPage,
   SetPassword : SetPassword,

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,ActivityIndicator, StatusBar } from 'react-native';
+import { View, Text, StyleSheet,ActivityIndicator } from 'react-native';
 import firebase from 'firebase';
 import { Button, ThemeProvider,SocialIcon ,Image, Header} from 'react-native-elements';
-import { Container ,Content, Icon, Picker, Form, } from 'native-base';
+import { Container } from 'native-base';
 import SearchBar from '../components/searchBar'
 import Card from '../components/Card'
-import DropdownMenu from 'react-native-dropdown-menu';
 
 
 
@@ -14,7 +13,7 @@ class DashboardScreen extends Component {
   constructor(props) {
 
     super(props)
-      this.state={user:'',text: ''}
+      this.state={user:''}
   }
 
   
@@ -37,52 +36,18 @@ class DashboardScreen extends Component {
            console.log(user)            
     }
   }
-  onValueChange(value: "string") {
-    this.setState({
-      selected: value
-    });
-  }
-
-
 
   render() {
-    var data = [["Media", "Java", "JavaScript", "PHP"], ["Sort by", "Ruby"],];
     return (
       <Container>
-      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/>
-        <Header
-          placement="center"
-          // leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent= {
-          <Image source={ require('../assets/logo_dark.png') }
-                      style={{alignSelf: 'center',
-                              marginTop:'10%'}}
-          /> }
-          // rightComponent={{ icon: 'home', color: '#fff' }}
-          containerStyle={{
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'space-around',
-  }}
-        />
-        <SearchBar/>
-        <DropdownMenu
-          style={{flex:1 }}
-          bgColor={'#FFFFFF'}
-          tintColor={'#666666'}
-          activityTintColor={'green'}
-          // arrowImg={}      
-          // checkImage={}   
-          // optionTextStyle={{color: '#333333'}}
-          // titleStyle={{color: '#333333'}} 
-          // maxHeight={300} 
-          handler={(selection, row) => this.setState({text: data[selection][row]})}
-          data={data}
-        >
-        </DropdownMenu>
-          
-          <Card/>
-
-          {/* <Container style={styles.container}>
+        {/* <Header
+          placement="left"
+          leftComponent={{ icon: 'menu', color: '#fff' }}
+          centerComponent={{ text: 'Dashboard Screen', style: { color: '#fff' } }}
+          rightComponent={{ icon: 'home', color: '#fff' }}
+        /> */}
+        
+          <Container style={styles.container}>
               <Text style={{textAlign:"center"}}>
                   {this.state.user.displayName}
               </Text> 
@@ -94,7 +59,7 @@ class DashboardScreen extends Component {
               <Button 
                   title="Sign out" 
                   onPress={() => firebase.auth().signOut()} />
-          </Container> */}
+          </Container>
       </Container>
     );
   }

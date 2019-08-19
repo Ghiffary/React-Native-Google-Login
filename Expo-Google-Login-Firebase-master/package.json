@@ -13,9 +13,11 @@
     "native-base": "^2.13.4",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-dropdown-menu": "^2.0.0",
     "react-native-elements": "^1.1.0",
     "react-native-onboarding-swiper": "^1.1.0",
-    "react-navigation": "^3.0.9"
+    "react-navigation": "^3.0.9",
+    "react-navigation-custom-bottom-tab-component": "^1.1.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
