@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,ActivityIndicator, StatusBar } from 'react-native';
+import { View, Text, StyleSheet,ActivityIndicator, StatusBar,ScrollView } from 'react-native';
 import firebase from 'firebase';
 import { Button, ThemeProvider,SocialIcon ,Image, Header} from 'react-native-elements';
 import { Container ,Content, Icon, Picker, Form, } from 'native-base';
@@ -65,6 +65,7 @@ class DashboardScreen extends Component {
   }}
         />
         <SearchBar/>
+        {/* <View style={{flex: 1}}> */}
         <DropdownMenu
           style={{flex:1 }}
           bgColor={'#FFFFFF'}
@@ -78,10 +79,17 @@ class DashboardScreen extends Component {
           handler={(selection, row) => this.setState({text: data[selection][row]})}
           data={data}
         >
+         <View style={{flex: 1, zIndex:0}}>
+         <ScrollView>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        </ScrollView>
+          </View>
         </DropdownMenu>
-          
-          <Card/>
 
+       
           {/* <Container style={styles.container}>
               <Text style={{textAlign:"center"}}>
                   {this.state.user.displayName}
@@ -95,6 +103,7 @@ class DashboardScreen extends Component {
                   title="Sign out" 
                   onPress={() => firebase.auth().signOut()} />
           </Container> */}
+          {/* </View> */}
       </Container>
     );
   }

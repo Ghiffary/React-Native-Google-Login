@@ -13,7 +13,7 @@ export default function LinksScreen() {
 }
 
 LinksScreen.navigationOptions = {
-  title: 'Links',
+  title: 'Ongoing',
 };
 
 const styles = StyleSheet.create({

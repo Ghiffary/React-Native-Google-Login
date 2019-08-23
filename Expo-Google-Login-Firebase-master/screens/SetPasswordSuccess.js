@@ -82,7 +82,7 @@ class DashboardScreen extends Component {
                                 // style={{backgroundColor: "red", padding: 20}} 
                                 onPress={()=> {
                                         console.log('does not work');
-                                        this.props.navigation.navigate('DashboardScreen')
+                                        this.props.navigation.navigate('Main')
                                                 }
                     }>
 
