@@ -56,12 +56,12 @@ class DashboardScreen extends Component {
                 <Text style={{alignSelf: 'center',
                               marginTop:'10%',
                               fontSize:20}}>
-                Your account is
+                Just one more step!
                 </Text>
-                <Text style={{alignSelf: 'center',
+                {/* <Text style={{alignSelf: 'center',
                               fontSize:20}}>
                 successfully created.
-                </Text>
+                </Text> */}
                 <Image
                       source={ require('../assets/img_success.png') }
                       style={{alignSelf: 'center',
@@ -75,10 +75,13 @@ class DashboardScreen extends Component {
                               marginStart:'10.94%',
                               marginEnd:'10.94%',
                               textAlign:'center',
-                              marginBottom:'6%'
                               }}>
-                We’ve sent you a verification email. Please verify your account.
+                              Email verifikasi telah kami kirimkan.
                 </Text>
+                      <Text style={{alignSelf: 'center',
+                              fontSize:15}}>
+                              Cek inbox kamu untuk melihat link verifikasi
+                      </Text>
                 
                     {/* <LinearGradient
                         colors={['#FF786F', '#FF0B52']}
@@ -106,7 +109,7 @@ class DashboardScreen extends Component {
                             Check my email 
                         </Text>
                     </LinearGradient> */}
-                    <TouchableOpacity 
+                    {/* <TouchableOpacity 
                                 // style={{backgroundColor: "red", padding: 20}} 
                                 onPress={()=> {
                                         console.log('does not work');
@@ -141,11 +144,29 @@ class DashboardScreen extends Component {
                               width:280
                               }}
                     />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </Content>
 
          
+
+
+            <Footer>
+      <LinearGradient
+        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
+        colors={['#FF786F', '#FF0B52']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}    
+        style={styles.text}>
+
+        <Text 
+        onPress= {() => this.props.navigation.navigate('Login')}
+        style={{color:'white', fontSize:14}}>Check Email Inbox </Text>
+        {/* <Icon 
+        onPress= {() => this.props.navigation.navigate('RegisterPage2')}
+        style={{color:'white', marginStart: 10, fontSize:14}} name='md-arrow-round-forward'/> */}
+      </LinearGradient>
+      </Footer>
       </Container>
           
           

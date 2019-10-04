@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import firebase from 'firebase';
-import {  ThemeProvider,SocialIcon ,Image,Text} from 'react-native-elements';
-import { Footer, Container,Header,Content, Button} from 'native-base';
+import { ThemeProvider,SocialIcon ,Image,Text} from 'react-native-elements';
+import { Footer, Container,Header,Content, Button,Form,Item,Label,Input,Icon} from 'native-base';
+import { LinearGradient } from 'expo'
+import { grey } from 'ansi-colors';
+
 
 
 
@@ -100,7 +103,9 @@ class LoginScreen extends Component {
       return { error: true };
     }
   };
+  
   render() {
+      
     return (
       //
       <Container>
@@ -113,75 +118,89 @@ class LoginScreen extends Component {
 
         <Text 
             style={{
-              marginLeft:10,
-              fontSize:20,
-              marginBottom:10}}>
-            Selamat Datang Influencer!
-        </Text>
-        <Text 
-            style={{
               fontSize:13,
               // fontWeight:'bold',
               marginLeft:10,
-              marginBottom:30}}>
-            Allstars Influencer dashboard membuka kesempatan untuk mendapatkan uang tambahan dari iklan. Ayo gabung sekarang!
+              marginBottom:5}}>
+                <Icon
+                      name='md-arrow-round-back' 
+                      style={{
+                        fontSize:14,
+                        }}
+                      />
+                      <Text style={{color:'transparent'}}>0</Text>
+                    Back
         </Text>
+        <Text 
+            style={{
+              marginLeft:10,
+              fontSize:20,
+              marginBottom:10}}>
+            Daftar Sebagai Influencer
+        </Text>
+          <Form>
+          <Text style={{fontSize:13,
+                              marginStart:20,
+                              marginTop:15}}>
+                   Email
+                 </Text>
+                  <Item 
+                        
+                        rounded 
+                        style={{
+                          backgroundColor:'#F0F0F0',
+                          borderColor:'#F0F0F0',
+                          marginStart:20,
+                          marginEnd:20,
+                          marginTop:10,
+                          height:40,}}
+                          >
+
+                          <Input 
+                            style={{marginLeft:20,
+                                    fontSize:12,
+                                    }}
+                            placeholder=''/>
+                  </Item>
 
 
-        <Button block light 
-                style={{
-                  marginTop:10,
-                  marginBottom:10,
-                  borderRadius: 100,
-      backgroundColor: '#FA285A',
-                }}
-                onPress={() => this.props.navigation.navigate("EmailpassScreen")}>
-            <Text>Daftar</Text>
-          </Button>
 
-          <Button block light
-                  style={{
-                  marginBottom:10,
-                  borderRadius: 100,
-                }}
-                onPress={() => this.props.navigation.navigate("Login")}>
-                
-            <Text>Login</Text>
-          </Button>
+                  <Text style={{fontSize:13,
+                              marginStart:20,
+                              marginTop:15}}>
+                   Password
+                 </Text>
+                  <Item 
+                        
+                        rounded 
+                        style={{
+                          backgroundColor:'#F0F0F0',
+                          borderColor:'#F0F0F0',
+                          marginStart:20,
+                          marginEnd:20,
+                          marginTop:10,
+                          height:40,}}
+                          >
 
-        {/* <SocialIcon
-                title="Sign In With Instagram"
-                button
-                raised={false}
-                type='instagram'
-                // onPress={() => this.signInWithGoogleAsync()}
-                
-          />
-          <SocialIcon
-                title="Sign In With Facebook"
-                button
-                raised={false}
-                type='facebook'
-                // onPress={() => this.signInWithGoogleAsync()}
-                
-          />
-          <SocialIcon
-                title="Sign In With Twitter"
-                button
-                raised={false}
-                type='twitter'
-                // onPress={() => this.signInWithGoogleAsync()}
-                
-          />
-        <SocialIcon
-                title="Sign In With Google"
-                button
-                raised={false}
-                type='google-plus-official'
-                onPress={() => this.signInWithGoogleAsync()}
-                
-          /> */}
-          <Text style={{
+                          <Input 
+                            style={{marginLeft:20,
+                                    fontSize:12,
+                                    }}
+                            placeholder=''/>
+                  </Item>
+                  <Text 
+                   style={{
+                            fontSize:11,
+                            color:'grey',
+                            marginStart:20,
+                            marginTop:15}}
+                  >Panjang password minimal 6 karakter</Text>
+          </Form>
+      
+          
+          
+
+          {/* <Text style={{
                   textAlign:'center',
                   margin:10,
                   }}>
@@ -192,19 +211,45 @@ class LoginScreen extends Component {
                   }}>
                   Baca FAQ
           </Text>
-          </Text>
+          </Text> */}
         
           
         </Container>
+
+        <Footer>
+      <LinearGradient
+        onPress= {() => this.props.navigation.navigate('RegisterPage')}
+        colors={['#FF786F', '#FF0B52']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}    
+        style={styles.text}>
+
+        <Text 
+        onPress= {() => this.props.navigation.navigate('DashboardScreen')}
+        style={{color:'white', fontSize:14}}>Login</Text>
+        <Icon 
+        onPress= {() => this.props.navigation.navigate('RegisterPage')}
+        style={{color:'white', marginStart: 10, fontSize:14}}/>
+      </LinearGradient>
+      </Footer>
         
           
           </Container>
+
+          
     );
   }
 }
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+    text: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+      },
   container: {
     flex: 1,
     margin:35,

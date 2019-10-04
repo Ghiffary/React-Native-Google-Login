@@ -29,7 +29,6 @@ class LoadingScreen extends Component {
   }
 }
 export default LoadingScreen;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

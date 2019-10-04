@@ -11,6 +11,9 @@ import CheckEmailPage from './screens/CheckEmailPage'
 import SetPassword from './screens/SetPassword'
 import SetPasswordSuccess from './screens/SetPasswordSuccess'
 import MainTabNavigator from './navigation/MainTabNavigator';
+import EmailpassScreen from './screens/EmailpassScreen';
+import RegisterPage2 from './screens/RegisterPage2';
+import Login from './screens/Login';
 
 
 // import AppNavigator from './navigation/AppNavigator';
@@ -39,6 +42,10 @@ const AppSwitchNavigator = createSwitchNavigator({
   CheckEmailPage : CheckEmailPage,
   SetPassword : SetPassword,
   SetPasswordSuccess : SetPasswordSuccess,
+  EmailpassScreen : EmailpassScreen,
+  RegisterPage2 : RegisterPage2,
+  Login : Login,
+
 
 });
 

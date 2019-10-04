@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {   StyleSheet,ActivityIndicator,StatusBar,ScrollView } from 'react-native';
 import firebase from 'firebase';
-import { Button, ThemeProvider,SocialIcon ,Image, Header,ButtonGroup} from 'react-native-elements';
-import { Container,Icon, Text,View,Item, Input, Footer,DatePicker,Picker } from 'native-base';
+import {  ThemeProvider,SocialIcon ,Image, Header,ButtonGroup} from 'react-native-elements';
+import { Button,Container,Icon, Text,View,Item, Input, Footer,DatePicker,Picker } from 'native-base';
 import { LinearGradient } from 'expo'
 import { grey } from 'ansi-colors';
 
@@ -49,7 +49,7 @@ class DashboardScreen extends Component {
   }
 
   render() {
-    const buttons = ['Male', 'Female', 'Group']
+    const buttons = ['Male', 'Female']
     const { selectedIndex } = this.state
     return (
       
@@ -63,13 +63,18 @@ class DashboardScreen extends Component {
                   flexDirection: "row",
                   justifyContent: "space-between",}}
                   >
-                  <Icon
+                  <Image
+                      source={ require('../assets/allstarsred.png') }
+                      style={{margin:20,
+                                          height:37,width:37 }}
+                    />
+                  {/* <Icon
                       name='md-arrow-round-back' 
                       style={{
                         fontSize:14,
                         marginTop:34,
                         marginLeft:17}}
-                      />
+                      /> */}
                   <Image
                       source={ require('../assets/img_bg_header.png') }
                       style={{alignSelf: 'flex-end' }}
@@ -189,10 +194,10 @@ class DashboardScreen extends Component {
                       onPress={this.updateIndex}
                       selectedIndex={selectedIndex}
                       buttons={buttons}
-                      containerStyle={{borderRadius:40,height: 40}}
+                      containerStyle={{borderRadius:40,height: 40,marginLeft:20,marginRight:20}}
                       />
                 
-                <Text style={{fontSize:13,
+                {/* <Text style={{fontSize:13,
                               marginStart:20,
                               marginTop:15}}>
                    Phone Number
@@ -234,7 +239,7 @@ class DashboardScreen extends Component {
                                     marginLeft:20,
                                     fontSize:12}}
                             placeholder='type your email here'/>
-                  </Item>
+                  </Item> */}
 
                   <Text style={{fontSize:13,
                               marginStart:20,
@@ -254,7 +259,7 @@ class DashboardScreen extends Component {
                       <Picker
                         mode="dropdown"
                         iosHeader="Select City"
-                        iosIcon={<Icon name="arrow-down" />}
+                        // iosIcon={<Icon name="arrow-down" />}
                         style={{ width: undefined }}
                         selectedValue={this.state.selected}
                         onValueChange={this.onValueChange.bind(this)}
@@ -268,7 +273,97 @@ class DashboardScreen extends Component {
                       </Picker>
                   </Item>
 
-                 
+
+                  <Text style={{fontSize:13,
+                              marginStart:20,
+                              marginTop:15,
+                              marginBottom:15}}>
+                   Influencer Category
+                 </Text>
+                  
+                  <View style={styles.container2}>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Beauty</Text>
+                      </Button>
+                      </View>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Healt/Sport</Text>
+                      </Button>
+                      </View>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Fasion</Text>
+                      </Button>
+                      </View>
+                  </View>
+
+                  <View style={styles.container2}>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Entertainment (music & film)</Text>
+                      </Button>
+                      </View>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Fasion</Text>
+                      </Button>
+                      </View>
+                  </View>
+
+                  <View style={styles.container2}>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Technology</Text>
+                      </Button>
+                      </View>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Food & Baverage</Text>
+                      </Button>
+                      </View>
+                  </View>
+
+                  <View style={styles.container2}>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Family & Parenting</Text>
+                      </Button>
+                      </View>
+                      <View style={styles.buttonContainer}>
+                      <Button rounded light>
+                          <Text style={{color:'gray'}}>Travel & Lifestyle</Text>
+                      </Button>
+                      </View>
+                  </View>
+
+
+                  <Text style={{fontSize:13,
+                              marginStart:20,
+                              marginTop:15}}>
+                   Referal Code <Text style={{fontSize:13,
+                              marginStart:20,
+                              marginTop:15,
+                              color:'gray'}}>(Optional)</Text>
+                 </Text>
+                 <Item 
+                        rounded 
+                        style={{
+                          backgroundColor:'#F0F0F0',
+                          borderColor:'#F0F0F0',
+                          marginStart:20,
+                          marginEnd:20,
+                          marginTop:10,
+                          height:40,
+                          marginBottom:20
+                          }}>
+
+                          <Input 
+                            style={{marginLeft:20,
+                                    fontSize:12}}
+                            placeholder='input your referal code here'/>
+                  </Item>
 
                   
                   
@@ -288,10 +383,10 @@ class DashboardScreen extends Component {
         style={styles.text}>
 
         <Text 
-        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
+        onPress= {() => this.props.navigation.navigate('RegisterPage2')}
         style={{color:'white', fontSize:14}}>Next</Text>
         <Icon 
-        onPress= {() => this.props.navigation.navigate('CheckEmailPage')}
+        onPress= {() => this.props.navigation.navigate('RegisterPage2')}
         style={{color:'white', marginStart: 10, fontSize:14}} name='md-arrow-round-forward'/>
       </LinearGradient>
       </Footer>
@@ -312,8 +407,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin:10,
-    // alignItems: 'center',
+    alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
+  
+    container2: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        // justifyContent: 'center',
+        marginLeft:15,
+        marginRight:15
+    },
+    buttonContainer: {
+        flex: 0,
+        margin:5
+    }
+
 });
 
